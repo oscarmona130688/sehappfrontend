@@ -1,0 +1,123 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" name="person-add" (click)="openAlert()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-list>
+  <ion-item *ngFor="let log of logs" color="tertiary">
+    <ion-label>Ubicación Actual </ion-label>
+    <ion-label>{{log}}</ion-label>
+
+  </ion-item>
+</ion-list>
+
+<ion-label>Categorias</ion-label>
+
+<br>
+<ion-content>
+
+
+  <ion-list>
+
+    <ion-item color="primary" [routerLink]="['/sercat','fontanero']">
+      <ion-buttons>
+        <ion-icon slot="icon-only" name="build">
+
+        </ion-icon>
+        <p>Fontanero</p>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item color="success" [routerLink]="['/sercat','pintor']">
+      <ion-buttons>
+        <ion-icon slot="icon-only" name="color-palette"></ion-icon>
+        <p>Pintor</p>
+      </ion-buttons>
+    </ion-item>
+
+
+    <ion-item color="warning" [routerLink]="['/sercat','estilista']">
+      <ion-buttons>
+        <ion-icon slot="icon-only" name="cut"></ion-icon>
+        <p>Estilista</p>
+      </ion-buttons>
+    </ion-item>
+
+
+
+
+    <ion-item color="danger" [routerLink]="['/sercat','electricista']">
+      <ion-buttons>
+        <ion-icon slot="icon-only" name="flash"></ion-icon>
+        <p>Electricista</p>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item color="stable" [routerLink]="['/sercat','enfermera']">
+      <ion-buttons>
+        <ion-icon slot="icon-only" name="bandage"></ion-icon>
+        <p>Enfermera</p>
+      </ion-buttons>
+    </ion-item>
+
+
+
+
+
+
+
+    <ion-item color="secondary" [routerLink]="['/sercat','cerrajero']">
+      <ion-buttons>
+        <ion-icon slot="icon-only" name="key"></ion-icon>
+        <p>Cerrajero</p>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item color="warning" [routerLink]="['/sercat','cuidador']">
+      <ion-buttons>
+        <ion-icon slot="icon-only" name="paw"></ion-icon>
+        <p>Cuidador</p>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item color="success" [routerLink]="['/sercat','cocinera']">
+      <ion-buttons>
+        <ion-icon slot="icon-only" name="restaurant"></ion-icon>
+        <p>Cocinera</p>
+      </ion-buttons>
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>
+
+<br>
+<ion-label>Recomendaciones</ion-label>
+<br>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of servicios['servicios']" [routerLink]="['/seresp',item._id]">
+      <ion-avatar slot="start">
+        <img src="assets/img/1658621505505-fontanero1.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.titulo}}</h2>
+        <h3>{{item.ciudad}}</h3>
+        <p>{{item.descripcion}}</p>
+      </ion-label>
+    </ion-item>
+
+
+
+  </ion-list>
+</ion-content>

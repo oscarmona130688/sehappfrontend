@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>seresp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card *ngFor="let item1 of servicios['servicios']">
+    <img src="assets/img/1658621505505-fontanero1.jpg" />
+    <ion-card-header>
+      <ion-card-subtitle>{{item1.ciudad}}</ion-card-subtitle>
+      <ion-card-title>{{item1.titulo}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{item1.descripcion}}
+    </ion-card-content>
+    <ion-label color="secondary">Datos de contacto:</ion-label>
+    <ion-accordion-group>
+      <ion-accordion value="first">
+        <ion-item slot="header" color="light">
+          <ion-label>Nombre</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          {{item1.usuario.nombre}}
+        </div>
+      </ion-accordion>
+      <ion-accordion value="second">
+        <ion-item slot="header" color="light">
+          <ion-label>Telefono</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          {{item1.usuario.telefono}}
+        </div>
+      </ion-accordion>
+      <ion-accordion value="third">
+        <ion-item slot="header" color="light">
+          <ion-label>Correo</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          {{item1.usuario.correo}}
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+  <ion-label color="secondary">Comentarios :
+    <ion-buttons slot="end">
+      <ion-icon slot="icon-only" name="add-circle" (click)="openAlert()"></ion-icon>
+    </ion-buttons>
+  </ion-label>
+  <ion-list>
+    <ion-item *ngFor="let item of comentarios['comentarios']">
+
+      <ion-label>
+        <h2>calificacion: {{item.calificacion}}</h2>
+
+        <p>{{item.descripcion}}</p>
+      </ion-label>
+    </ion-item>
+
+
+
+  </ion-list>
+
+</ion-content>

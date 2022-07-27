@@ -1,0 +1,7 @@
+{
+  "name": "sehapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

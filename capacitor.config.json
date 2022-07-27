@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "sehapp",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>sercat</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<br>
+<ion-label>{{categoria}}</ion-label>
+<br>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of servicios['servicios']" [routerLink]="['/seresp',item._id]">
+      <ion-avatar slot="start">
+        <img src="assets/img/1658621505505-fontanero1.jpg" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{item.titulo}}</h2>
+        <h3>{{item.ciudad}}</h3>
+        <p>{{item.descripcion}}</p>
+      </ion-label>
+    </ion-item>
+
+
+
+  </ion-list>
+</ion-content>
